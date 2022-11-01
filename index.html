@@ -15,10 +15,58 @@
   <link rel="stylesheet" href="css/layout.css">
   <link rel="stylesheet" href="css/styles.css">
 </head>
-<body>
+<body class="background-color">
   <header>
+    <div class="container code-journal-background">
+      <div class="row">
+        <div class="column-full">
+          <h4 class="header">Code Journal</h4>
+        </div>
+      </div>
+    </div>
   </header>
   <main>
+    <div class="container">
+      <div data-view="entry-form">
+        <form action="" id="new-entry-form">
+          <div class="row">
+            <div class="column-full">
+              <h3 class="new-entry">New Entry</h3>
+            </div>
+          </div>
+          <div class="row">
+            <div class="column-half">
+              <img class="img" src="images/placeholder-image-square.jpg">
+            </div>
+            <div class="column-half">
+              <label class="title" for="title">Title</label>
+              <div>
+                <input class="title" type="text" id="title" name="title" required>
+              </div>
+              <label class="photourl" for="photourl">Photo URL</label>
+              <div>
+                <input class="photourl" type="url" id="photourl" name="photourl" required>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="column-full">
+              <label class="notes" for="notes">Notes</label>
+              <div>
+                <textarea class="notes" name="notes" id="notes" cols="30" rows="10"></textarea>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="column-full">
+              <div class="save-btn">
+                <button>SAVE</button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
   </main>
   <script src="js/data.js"></script>
   <script src="js/main.js"></script>
