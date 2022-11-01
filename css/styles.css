@@ -1,0 +1,70 @@
+.header {
+  background-color: rgb(86, 43, 129);
+  color: white;
+  font-family: sans-serif;
+  font-weight: lighter;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
+  font-size: 15px;
+}
+
+.background-color {
+  background-color: rgb(240, 240, 240);
+}
+
+.placeholder-img {
+  width: 100%;
+  margin-bottom: 18px;
+  object-fit: contain;
+}
+
+.save-btn {
+  text-align: end;
+}
+
+button {
+  background-color: rgb(86, 43, 129);
+  color: white;
+  border-radius: 4px;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+  height: 2rem;
+  width: 4rem;
+}
+
+.title {
+  width: 100%;
+  font-family: sans-serif;
+  font-weight: bold;
+  margin-bottom: 10px;
+  margin-top: 8px;
+  font-size: 15px;
+}
+
+.photo-url {
+  width: 100%;
+  font-family: sans-serif;
+  font-weight: bold;
+  margin-bottom: 15px;
+  margin-top: 8px;
+  font-size: 15px;
+}
+
+.notes {
+  width: 100%;
+  font-family: sans-serif;
+  font-weight: bold;
+  margin-bottom: 10px;
+  margin-top: 8px;
+  font-size: 15px;
+}
+
+.new-entry {
+  font-family: sans-serif;
+}
+
+.code-journal-background {
+  background-color: rgb(86, 43, 129);
+}
