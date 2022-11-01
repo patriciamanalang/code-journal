@@ -43,13 +43,17 @@ button {
   font-size: 15px;
 }
 
-.photo-url {
+.photourl {
   width: 100%;
   font-family: sans-serif;
   font-weight: bold;
   margin-bottom: 15px;
   margin-top: 8px;
   font-size: 15px;
+}
+
+.url {
+  width: 100%;
 }
 
 .notes {
