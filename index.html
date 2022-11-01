@@ -28,7 +28,7 @@
   <main>
     <div class="container">
       <div data-view="entry-form">
-        <form>
+        <form action="" id="new-entry-form">
           <div class="row">
             <div class="column-full">
               <h3 class="new-entry">New Entry</h3>
@@ -41,11 +41,11 @@
             <div class="column-half">
               <label class="title" for="title">Title</label>
               <div>
-                <input class="title" type="text" id="title" required>
+                <input class="title" type="text" id="title" name="title" required>
               </div>
               <label class="photo-url" for="photo-url">Photo URL</label>
               <div>
-                <input class="photo-url" type="url" id="photo-url" required>
+                <input class="photo-url" type="url" id="photo-url" name="image" required>
               </div>
             </div>
           </div>
