@@ -24,6 +24,23 @@
   text-align: end;
 }
 
+.new-btn {
+  background-color: rgb(86, 43, 129);
+  color: white;
+  border-radius: 4px;
+  margin-top: 1rem;
+}
+
+.new-btn-align {
+  justify-content: space-between;
+  display: flex;
+}
+
+.text-align-p {
+  text-align: center;
+  font-family: sans-serif;
+}
+
 button {
   background-color: rgb(86, 43, 129);
   color: white;
@@ -71,4 +88,15 @@ button {
 
 .code-journal-background {
   background-color: rgb(86, 43, 129);
+}
+
+.entries-header {
+  font-family: sans-serif;
+  letter-spacing: 2px;
+  font-weight: 600;
+  color: rgb(41, 41, 41);
+}
+
+.space-between {
+  justify-content: space-between;
 }
