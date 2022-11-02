@@ -100,3 +100,16 @@ button {
 .space-between {
   justify-content: space-between;
 }
+
+.entry-image {
+  object-fit: contain;
+  width: 100%;
+}
+
+.entry-image-text {
+  width: 100%;
+}
+
+li {
+  list-style: none;
+}
