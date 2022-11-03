@@ -23,31 +23,63 @@ function handleSubmit(event) {
 }
 $newEntryForm.addEventListener('submit', handleSubmit);
 
-// function renderJournalEntry(entry) {
-//   var $li = document.createElement('li');
-//   var $rowDiv = document.createElement('div');
-//   $rowDiv.setAttribute('class', 'row');
-//   $li.appendChild($rowDiv);
-//   var $columnHalfDiv = document.createElement('div');
-//   $columnHalfDiv.setAttribute('class', 'column-half');
-//   $rowDiv.appendChild($columnHalfDiv);
-//   var $imgDiv = document.createElement('div');
-//   $columnHalfDiv.appendChild($imgDiv);
-//   var $img = document.createElement('img');
-//   $img.setAttribute('class', 'entry-image');
-//   $img.src = entry.url;
-//   $imgDiv.appendChild($img);
-//   var $secondColumnHalfDiv = document.createElement('div');
-//   $secondColumnHalfDiv.setAttribute('class', 'column-half');
-//   $rowDiv.appendChild($secondColumnHalfDiv);
-//   var $entryImageTextDiv = document.createElement('div');
-//   $entryImageTextDiv.setAttribute('class', 'entry-image-text');
-//   $secondColumnHalfDiv.appendChild($entryImageTextDiv);
-//   var $h2 = document.createElement('h2');
-//   $h2.textContent = entry.title;
-//   $entryImageTextDiv.appendChild($h2);
-//   var $p = document.createElement('p');
-//   $p.textContent = entry.notes;
-//   $entryImageTextDiv.appendChild($p);
-//   return $li;
-// }
+/*
+<ul>
+  <li>
+    <div class="row">
+      <div class="column-half">
+        <div>
+          <img class="entry-image" src="images/placeholder-image-square.jpg">
+        </div>
+      </div>
+      <div class="column-half">
+        <div class="entry-image-text">
+          <h2>Ada Lovelace</h2>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio, dolorem ratione vel quisquam labore aperiam nesciunt asperiores totam, officiis eum neque nam. Voluptas ipsam magnam sequi expedita porro quas fugiat.</p>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem iste illo repudiandae, dolor vero quaerat a eius odio, dolorum veritatis voluptas corrupti eaque, vitae facere asperiores adipisci cupiditate! Quis, at.</p>
+        </div>
+      </div>
+    </div>
+  </li>
+</ul>
+*/
+
+function renderEntry(entry) {
+  var $li = document.createElement('li');
+  var $rowDiv = document.createElement('div');
+  $rowDiv.setAttribute('class', 'row');
+  $li.appendChild($rowDiv);
+  var $columnHalfDiv = document.createElement('div');
+  $columnHalfDiv.setAttribute('class', 'column-half');
+  $rowDiv.appendChild($columnHalfDiv);
+  var $imgDiv = document.createElement('div');
+  $columnHalfDiv.appendChild($imgDiv);
+  var $img = document.createElement('img');
+  $img.setAttribute('class', 'entry-image');
+  $img.src = entry.url;
+  $imgDiv.appendChild($img);
+  var $secondColumnHalfDiv = document.createElement('div');
+  $secondColumnHalfDiv.setAttribute('class', 'column-half');
+  $rowDiv.appendChild($secondColumnHalfDiv);
+  var $entryImageTextDiv = document.createElement('div');
+  $entryImageTextDiv.setAttribute('class', 'entry-image-text');
+  $secondColumnHalfDiv.appendChild($entryImageTextDiv);
+  var $h2 = document.createElement('h2');
+  $h2.textContent = entry.title;
+  $entryImageTextDiv.appendChild($h2);
+  var $p = document.createElement('p');
+  $p.textContent = entry.notes;
+  $entryImageTextDiv.appendChild($p);
+  return $li;
+}
+
+function handleDOMContentLoaded(event) {
+  var $ul = document.querySelector('ul');
+
+  for (var i = 0; i < data.entries.length; i++) {
+    var appendUl = renderEntry(data.entries[i]);
+    $ul.appendChild(appendUl);
+  }
+
+}
+window.addEventListener('DOMContentLoaded', handleDOMContentLoaded);

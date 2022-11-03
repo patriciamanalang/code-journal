@@ -1,4 +1,4 @@
-.header {
+.code-journal-header {
   background-color: rgb(86, 43, 129);
   color: white;
   font-family: sans-serif;
@@ -7,7 +7,12 @@
   padding-bottom: 3px;
   margin-bottom: 0.5rem;
   margin-top: 0.5rem;
-  font-size: 15px;
+  font-size: 18px;
+  display: inline;
+}
+
+.header-padding {
+  padding-top: 1rem;
 }
 
 .background-color {
@@ -88,6 +93,7 @@ button {
 
 .code-journal-background {
   background-color: rgb(86, 43, 129);
+  padding-bottom: 1rem;
 }
 
 .entries-header {
@@ -112,4 +118,13 @@ button {
 
 li {
   list-style: none;
+}
+
+.entries-page-header {
+  display: inline;
+  color: white;
+  font-family: sans-serif;
+  font-weight: lighter;
+  letter-spacing: 1px;
+  margin-left: 2rem;
 }

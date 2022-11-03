@@ -16,19 +16,20 @@
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body class="background-color">
-  <header>
-    <div class="container code-journal-background">
-      <div class="row">
+  <header class="code-journal-background">
+    <div class="container">
+      <div class="row header-padding">
         <div class="column-full">
-          <h4 class="header">Code Journal</h4>
+          <h4 class="code-journal-header">Code Journal</h4>
+          <h4 class="entries-page-header">Entries</h4>
         </div>
       </div>
     </div>
   </header>
   <main>
     <div class="container">
-      <div data-view="entry-form">
-        <form class="hidden" action="" id="new-entry-form">
+      <div class="hidden" data-view="entry-form">
+        <form action="" id="new-entry-form">
           <div class="row">
             <div class="column-full">
               <h3 class="new-entry">New Entry</h3>
@@ -66,7 +67,7 @@
           </div>
         </form>
       </div>
-      <div data-view="entries">
+      <div class="entries" data-view="entries">
         <div class="row">
           <div class="column-full new-btn-align">
             <h2>Entries</h2>
@@ -79,22 +80,6 @@
           </div>
         </div>
         <ul>
-          <li>
-            <div class="row">
-              <div class="column-half">
-                <div>
-                  <img class="entry-image" src="images/placeholder-image-square.jpg">
-                </div>
-              </div>
-              <div class="column-half">
-                <div class="entry-image-text">
-                  <h2>Ada Lovelace</h2>
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio, dolorem ratione vel quisquam labore aperiam nesciunt asperiores totam, officiis eum neque nam. Voluptas ipsam magnam sequi expedita porro quas fugiat.</p>
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem iste illo repudiandae, dolor vero quaerat a eius odio, dolorum veritatis voluptas corrupti eaque, vitae facere asperiores adipisci cupiditate! Quis, at.</p>
-                </div>
-              </div>
-            </div>
-          </li>
         </ul>
       </div>
     </div>
