@@ -1,6 +1,10 @@
 var $photoUrl = document.querySelector('#photourl');
 var $img = document.querySelector('.img');
 var $newEntryForm = document.querySelector('#new-entry-form');
+var $entriesView = document.querySelector('.entries');
+var $formView = document.querySelector('.form');
+var $ul = document.querySelector('ul');
+var $entriesHeader = document.querySelector('.entries-page-header');
 
 function updateImage(event) {
   if ($photoUrl.value === '') {
@@ -8,6 +12,22 @@ function updateImage(event) {
   } else $img.setAttribute('src', event.target.value);
 }
 $photoUrl.addEventListener('input', updateImage);
+
+var $newButton = document.querySelector('.new-btn');
+
+function newButtonHandler(event) {
+  data.view = 'entry-form';
+  $formView.className = 'view data-view';
+  $entriesView.className = 'entries container hidden';
+}
+
+function entriesHeader(event) {
+  $entriesView.className = 'entries container';
+  $formView.className = 'view data-view hidden';
+}
+
+$newButton.addEventListener('click', newButtonHandler);
+$entriesHeader.addEventListener('click', entriesHeader);
 
 function handleSubmit(event) {
   event.preventDefault();
@@ -19,7 +39,12 @@ function handleSubmit(event) {
   data.nextEntryId++;
   data.entries.unshift(dataEntry);
   $img.setAttribute('src', 'images/placeholder-image-square.jpg');
+  data.view = 'entries';
+  $entriesView.className = 'entries container';
+  $formView.className = 'view data-view hidden';
+  $ul.prepend(renderEntry(dataEntry));
   $newEntryForm.reset();
+
 }
 $newEntryForm.addEventListener('submit', handleSubmit);
 
@@ -79,6 +104,17 @@ function handleDOMContentLoaded(event) {
   for (var i = 0; i < data.entries.length; i++) {
     var appendUl = renderEntry(data.entries[i]);
     $ul.appendChild(appendUl);
+  }
+
+  var $dataView = data.view;
+
+  if ($dataView === 'entry-form') {
+    $formView.className = 'view data-view';
+    $entriesView.className = 'entries container hidden';
+  } else if ($dataView === 'entries') {
+    $entriesView.className = 'entries container';
+    $formView.className = 'view data-view hidden';
+
   }
 
 }
