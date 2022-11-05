@@ -16,19 +16,20 @@
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body class="background-color">
-  <header>
-    <div class="container code-journal-background">
-      <div class="row">
+  <header class="code-journal-background">
+    <div class="container">
+      <div class="row header-padding">
         <div class="column-full">
-          <h4 class="header">Code Journal</h4>
+          <h4 class="code-journal-header">Code Journal</h4>
+          <h4 class="entries-page-header">Entries</h4>
         </div>
       </div>
     </div>
   </header>
   <main>
-    <div class="container">
-      <div data-view="entry-form">
-        <form action="" id="new-entry-form">
+    <div class="container" data-view="entry-form">
+      <div class="form container">
+        <form class="view data-view" action="" id="new-entry-form">
           <div class="row">
             <div class="column-full">
               <h3 class="new-entry">New Entry</h3>
@@ -59,12 +60,27 @@
           </div>
           <div class="row">
             <div class="column-full">
-              <div class="save-btn">
-                <button>SAVE</button>
+              <div class="save-btn-align">
+                <button class="save-btn" data-view="entries">SAVE</button>
               </div>
             </div>
           </div>
         </form>
+      </div>
+      <div class="hidden entries container" data-view="entries">
+        <div class="row view data-view">
+          <div class="column-full new-btn-align">
+            <h2>Entries</h2>
+            <a href="#" class="new-btn" data-view="entry-form">NEW</a>
+          </div>
+        </div>
+        <div class="row">
+          <div class="column-full text-align-p">
+            <p class="hidden">No entries have been recorded.</p>
+          </div>
+        </div>
+        <ul>
+        </ul>
       </div>
     </div>
   </main>
