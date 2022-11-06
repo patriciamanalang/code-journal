@@ -10,13 +10,17 @@ var $entriesList = document.querySelector('#entries-list');
 var $title = document.querySelector('#title');
 var $notes = document.querySelector('#notes');
 var $newEntry = document.querySelector('.new-entry');
+var $delete = document.querySelector('.delete');
+var $modalBackground = document.querySelector('.container-modal');
+var $cancelButton = document.querySelector('.cancel-btn');
+var $entriesPlaceholder = document.querySelector('.row entries-placeholder');
+var $confirmButton = document.querySelector('.confirm-btn');
 
 function updateImage(event) {
   if ($photoUrl.value === '') {
     $img.setAttribute('src', 'images/placeholder-image-square.jpg');
   } else $img.setAttribute('src', event.target.value);
 }
-$photoUrl.addEventListener('input', updateImage);
 
 function newButtonHandler(event) {
   data.view = 'entry-form';
@@ -28,9 +32,6 @@ function entriesHeader(event) {
   $entriesView.className = 'entries container';
   $formView.className = 'view data-view hidden';
 }
-
-$newButton.addEventListener('click', newButtonHandler);
-$entriesHeader.addEventListener('click', entriesHeader);
 
 function handleSubmit(event) {
   event.preventDefault();
@@ -47,9 +48,7 @@ function handleSubmit(event) {
   $formView.className = 'view data-view hidden';
   $ul.prepend(renderEntry(dataEntry));
   $newEntryForm.reset();
-
 }
-$newEntryForm.addEventListener('submit', handleSubmit);
 
 /*
 <ul>
@@ -109,26 +108,23 @@ function renderEntry(entry) {
 }
 
 function handleDOMContentLoaded(event) {
-  var $ul = document.querySelector('ul');
 
+  var $ul = document.querySelector('ul');
   for (var i = 0; i < data.entries.length; i++) {
     var appendUl = renderEntry(data.entries[i]);
     $ul.appendChild(appendUl);
   }
 
   var $dataView = data.view;
-
   if ($dataView === 'entry-form') {
     $formView.className = 'view data-view';
     $entriesView.className = 'entries container hidden';
   } else if ($dataView === 'entries') {
     $entriesView.className = 'entries container';
     $formView.className = 'view data-view hidden';
-
   }
 
 }
-window.addEventListener('DOMContentLoaded', handleDOMContentLoaded);
 
 function handleEdit(event) {
   if (event.target.matches('.edit-button')) {
@@ -152,27 +148,17 @@ function handleEdit(event) {
         $img.setAttribute('src', data.editing.url);
       }
     }
+    $delete.className = 'delete inline';
   }
 }
-
-$entriesList.addEventListener('click', handleEdit);
-
-var $delete = document.querySelector('.delete');
-var $modalBackground = document.querySelector('.container-modal');
-var $cancelButton = document.querySelector('.cancel-btn');
-var $entriesPlaceholder = document.querySelector('.row entries-placeholder');
-var $confirmButton = document.querySelector('.confirm-btn');
 
 function handleDeleteClick(event) {
   $modalBackground.className = 'container-modal';
 }
-$delete.addEventListener('click', handleDeleteClick);
 
 function handleCancelButtonClick(event) {
   $modalBackground.className = 'container-modal hidden';
 }
-
-$cancelButton.addEventListener('click', handleCancelButtonClick);
 
 function handleConfirmButtonClick(event) {
   var $li = document.querySelectorAll('li');
@@ -200,3 +186,11 @@ function handleConfirmButtonClick(event) {
 }
 
 $confirmButton.addEventListener('click', handleConfirmButtonClick);
+$photoUrl.addEventListener('input', updateImage);
+$newButton.addEventListener('click', newButtonHandler);
+$entriesHeader.addEventListener('click', entriesHeader);
+$newEntryForm.addEventListener('submit', handleSubmit);
+window.addEventListener('DOMContentLoaded', handleDOMContentLoaded);
+$entriesList.addEventListener('click', handleEdit);
+$delete.addEventListener('click', handleDeleteClick);
+$cancelButton.addEventListener('click', handleCancelButtonClick);
