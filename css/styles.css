@@ -110,10 +110,6 @@
   color: rgb(41, 41, 41);
 }
 
-.space-between {
-  justify-content: space-between;
-}
-
 .entry-image {
   object-fit: contain;
   width: 100%;
@@ -134,4 +130,14 @@ li {
   font-weight: lighter;
   letter-spacing: 1px;
   margin-left: 2rem;
+}
+
+.entry-title-pen {
+  display: flex;
+  justify-content: space-between;
+}
+
+i {
+  font-size: 1.5rem;
+  margin-top: 20px;
 }
