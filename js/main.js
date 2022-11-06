@@ -156,3 +156,47 @@ function handleEdit(event) {
 }
 
 $entriesList.addEventListener('click', handleEdit);
+
+var $delete = document.querySelector('.delete');
+var $modalBackground = document.querySelector('.container-modal');
+var $cancelButton = document.querySelector('.cancel-btn');
+var $entriesPlaceholder = document.querySelector('.row entries-placeholder');
+var $confirmButton = document.querySelector('.confirm-btn');
+
+function handleDeleteClick(event) {
+  $modalBackground.className = 'container-modal';
+}
+$delete.addEventListener('click', handleDeleteClick);
+
+function handleCancelButtonClick(event) {
+  $modalBackground.className = 'container-modal hidden';
+}
+
+$cancelButton.addEventListener('click', handleCancelButtonClick);
+
+function handleConfirmButtonClick(event) {
+  var $li = document.querySelectorAll('li');
+
+  for (var b = 0; b < data.entries.length; b++) {
+    if (data.editing.entryId === data.entries[b].entryId) {
+      data.entries.splice(b, 1);
+      break;
+    }
+  }
+  for (var i = 0; i < $li.length; i++) {
+    var liDataEntryId = $li[i].getAttribute('data-entry-id');
+    liDataEntryId = parseInt(liDataEntryId);
+    if (liDataEntryId === data.editing.entryId) {
+      $li[i].remove();
+    }
+  }
+  data.editing = null;
+  $entriesView.className = 'entries container';
+  $formView.className = 'view data-view hidden';
+  if (data.entries.length === 0) {
+    $entriesPlaceholder.className = 'row entries-placeholder';
+  }
+  $modalBackground.className = 'container-modal hidden';
+}
+
+$confirmButton.addEventListener('click', handleConfirmButtonClick);
