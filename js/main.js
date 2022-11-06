@@ -147,9 +147,9 @@ function handleEdit(event) {
       }
       if (data.editing !== null) {
         $title.value = data.editing.title;
-        $photoUrl.value = data.editing.photourl;
+        $photoUrl.value = data.editing.url;
         $notes.value = data.editing.notes;
-        $img.setAttribute('src', data.editing.photourl);
+        $img.setAttribute('src', data.editing.url);
       }
     }
   }
