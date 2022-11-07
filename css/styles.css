@@ -25,8 +25,9 @@
   object-fit: contain;
 }
 
-.save-btn-align {
-  text-align: end;
+.delete {
+  color: red;
+  text-decoration: underline;
 }
 
 .save-btn {
@@ -37,6 +38,17 @@
   margin-bottom: 1rem;
   height: 2rem;
   width: 4rem;
+  padding-right: 7px;
+}
+
+.inline {
+  display: inline;
+}
+
+.display {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .new-btn {
@@ -140,4 +152,59 @@ li {
 i {
   font-size: 1.5rem;
   margin-top: 20px;
+}
+
+.container-modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
+  background-color: rgb(0 0 0 / 80%);
+}
+
+.modal-text {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-family: sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.center-page {
+  display: flex;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.rectangle {
+  background-color: white;
+  width: 330px;
+  height: 130px;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+}
+
+.modal-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.cancel-btn {
+  color: black;
+  background-color: rgb(182, 182, 182);
+  border-radius: 4px;
+  height: 2rem;
+  border: none;
+}
+
+.confirm-btn {
+  color: white;
+  background-color: rgb(220, 38, 37);
+  border-radius: 4px;
+  border: none;
 }

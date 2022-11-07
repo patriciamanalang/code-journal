@@ -61,9 +61,12 @@
             </div>
           </div>
           <div class="row">
-            <div class="column-full">
-              <div class="save-btn-align">
-                <button class="save-btn" data-view="entries">SAVE</button>
+            <div class="column-full display">
+              <div>
+                <p class="delete inline hidden">Delete Entry</p>
+              </div>
+              <div class="save-align">
+                <button class="save-btn inline" data-view="entries">SAVE</button>
               </div>
             </div>
           </div>
@@ -76,7 +79,7 @@
             <a href="#" class="new-btn" data-view="entry-form">NEW</a>
           </div>
         </div>
-        <div class="row">
+        <div class="row entries-placeholder">
           <div class="column-full text-align-p">
             <p class="no entries hidden">No entries have been recorded.</p>
           </div>
@@ -106,6 +109,19 @@
             </div>
           </li> -->
         </ul>
+      </div>
+    </div>
+    <div class="container-modal hidden">
+      <div class="row">
+        <div class="column-full center-page">
+          <div class="rectangle">
+            <h3 class="modal-text">Are you sure you want to delete this entry?</h3>
+            <form class="modal-buttons">
+              <button class="cancel-btn">CANCEL</button>
+              <button class="confirm-btn">CONFIRM</button>
+            </form>
+          </div>
+        </div>
       </div>
     </div>
   </main>
